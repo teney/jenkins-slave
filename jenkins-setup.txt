@@ -1,0 +1,9 @@
+# Give the Jenkins SA account the ability to spin up privileged VMs
+
+oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:jenkins
+
+# Kubernetes Plugin setup
+1. Give the imagestream in openshift the label role=jenkins-slave
+2. In Jenkins Give the Kubernetes plugin the ability to run privileged jobs
+3. Mount the host file path /var/run/docker.sock
+   
